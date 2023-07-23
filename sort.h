@@ -34,5 +34,7 @@ void cocktail_sort_list(listint_t **list);
 void swap_nodes(listint_t **list, listint_t *left, listint_t *right);
 void counting_sort(int *array, size_t size);
 void merge_sort(int *array, size_t size);
+void print_array(const int *array, size_t size);
+void heap_sort(int *array, size_t size);
 
 #endif
