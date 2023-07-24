@@ -4,6 +4,15 @@
 #include <stddef.h>
 #include <stdlib.h>
 
+/**
+ * enum kind_e - Represents the suit of a playing card
+ *
+ * @SPADE: Spades suit
+ * @HEART: Hearts suit
+ * @CLUB: Clubs suit
+ * @DIAMOND: Diamonds suit
+ */
+
 typedef enum kind_e
 {
 	SPADE = 0,
@@ -12,11 +21,26 @@ typedef enum kind_e
 	DIAMOND
 } kind_t;
 
+/**
+ * struct card_s - Represents a playing card
+ *
+ * @value: The value of the card (e.g., "2", "K", "A")
+ * @kind: The suit of the card (e.g., SPADE, HEART, CLUB, DIAMOND)
+ */
+
 typedef struct card_s
 {
 	const char *value;
 	const kind_t kind;
 } card_t;
+
+/**
+ * struct deck_node_s - Represents a node in a deck of cards
+ *
+ * @card: Pointer to the card stored in the node
+ * @prev: Pointer to the previous node in the deck
+ * @next: Pointer to the next node in the deck
+ */
 
 typedef struct deck_node_s
 {
