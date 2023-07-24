@@ -1,5 +1,7 @@
 #include "sort.h"
 
+void quick_sort_recursive(int *array, int low, int high);
+
 /**
  * quick_sort - Sorts an array of integers in ascending order
  *
@@ -13,25 +15,6 @@ void quick_sort(int *array, size_t size)
 		return;
 
 	quick_sort_recursive(array, 0, size - 1);
-}
-
-/**
- * quick_sort_recursive - Recursive function to perform quick sort
- *
- * @array: The array to be sorted
- * @low: The starting index of the partition
- * @high: The ending index of the partition
- */
-
-void quick_sort_recursive(int *array, int low, int high)
-{
-	if (low < high)
-	{
-		int pivot_index = lomuto_partition(array, low, high);
-
-		quick_sort_recursive(array, low, pivot_index - 1);
-		quick_sort_recursive(array, pivot_index + 1, high);
-	}
 }
 
 /**
@@ -73,4 +56,23 @@ int lomuto_partition(int *array, int low, int high)
 	}
 
 	return (partition_index + 1);
+}
+
+/**
+ * quick_sort_recursive - Recursive function to perform quick sort
+ *
+ * @array: The array to be sorted
+ * @low: The starting index of the partition
+ * @high: The ending index of the partition
+ */
+
+void quick_sort_recursive(int *array, int low, int high)
+{
+	if (low < high)
+	{
+		int pivot_index = lomuto_partition(array, low, high);
+
+		quick_sort_recursive(array, low, pivot_index - 1);
+		quick_sort_recursive(array, pivot_index + 1, high);
+	}
 }
